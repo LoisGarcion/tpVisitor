@@ -16,13 +16,12 @@ public class CD extends Item {
 		this.numberOfTracks = numberOfTracks;
 	}
 
-	public void print() {
-		System.out.println(this);
-	}
-
 	@Override
 	public String toString() {
 		return "CD{" + super.toString() + ",numberOfTracks=" + numberOfTracks + '}';
 	}
-	
+
+	public String accept(Visitor v) {
+		return v.visit(this);
+	}
 }
